@@ -1,0 +1,28 @@
+.row {
+
+  z-index: 0;
+}
+
+.card {
+  max-font-size: 0.1rem;
+  overflow: hidden;
+  display: -moz-box;
+  display: -webkit-box;
+  line-clamp: 4;
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  border: none;
+  text-overflow: ellipsis;
+}
+
+.btn {
+
+  max-font-size: 0.1rem;
+}
+
+img, div {
+  border-radius: 25px;
+
+}

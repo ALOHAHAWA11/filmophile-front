@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-1 col-sm-6 col-md-4 col-xl-3 element" *ngFor="let f of filmPreview">
+    <div class="card shadow-lg p-3 mb-5 bg-white">
+      <img src="{{f?.poster}}" class="card-img-top" alt="">
+      <div class="card card-body">
+        <b>{{f?.nameFilm}}</b>
+        <p class="card-text">{{f?.annotation}}</p>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{f?.country}}</p>
+        <a [routerLink]="['/film', f?.primaryKey]" class="btn btn-outline-warning">Смотреть подробнее</a>
+      </div>
+    </div>
+  </div>
+</div>
+

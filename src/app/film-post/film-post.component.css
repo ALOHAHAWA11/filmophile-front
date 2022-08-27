@@ -1,0 +1,43 @@
+img {
+  border-radius: 25px;
+  max-height: 90%;
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main {
+  border-radius: 25px;
+}
+
+textarea {
+  resize: none;
+  margin-bottom: 1vw;
+}
+
+div {
+  margin-bottom: 1vw;
+}
+.div-annotation {
+  text-align: justify;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.div-input {
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.div-film-title {
+  margin-bottom: 2vh;
+}
+
+.card-subtitle {
+  color: gray;
+}
+
+.link-warning {
+  text-decoration: None;
+}
