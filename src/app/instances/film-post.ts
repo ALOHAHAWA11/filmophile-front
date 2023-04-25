@@ -1,45 +1,41 @@
 import {IFilmPost} from "./interfaces/film-post-interface";
-import {FilmPreview} from "./film-preview";
-import {Member} from "./film-member";
-import {MemberPreview} from "./film-member-preview";
 
-export class FilmPost extends FilmPreview implements IFilmPost {
-  constructor(primaryKey?: number, nameFilm?: string, annotation?: string,
-              country?: string, poster?: string, private _originalName?: string, private _genres?: string[],
-              private _actors?: MemberPreview[], private _directors?: MemberPreview[], private _operators?: MemberPreview[],
-              private _writers?: MemberPreview[], private _producers?: MemberPreview[], private _dateRelease?: string) {
-    super(primaryKey, nameFilm, annotation, country, poster);
+export class FilmPost implements IFilmPost {
+  constructor(private id?: number, private name?: string, private poster?: string, private dateRelease?: Date,
+              private annotation?: string, private originalName?: string, private members?: string[], private genres?: string[]) {
+
+  }
+  public getDateRelease(): Date {
+    return this.dateRelease!;
   }
 
-  get originalName(): string {
-    return this._originalName!;
+  public getId(): number {
+    return this.id!;
   }
 
-  get genres(): string[] {
-    return this._genres!;
+  public getName(): string {
+    return this.name!;
   }
 
-  get actors(): MemberPreview[] {
-    return this._actors!;
+  public getPoster(): string {
+    return this.poster!;
   }
 
-  get directors(): MemberPreview[] {
-    return this._directors!;
+  public getGenres(): string[] {
+    return this.genres!;
   }
 
-  get operators(): MemberPreview[] {
-    return this._operators!;
+  public getMembers(): string[] {
+    return this.members!;
   }
 
-  get writers(): MemberPreview[] {
-    return this._writers!;
+  public getOriginalName(): string {
+    return this.originalName!;
   }
 
-  get producers(): MemberPreview[] {
-    return this._producers!;
+  public getAnnotation(): string {
+    return this.annotation!;
   }
 
-  get dateRelease(): string {
-    return this._dateRelease!;
-  }
+
 }

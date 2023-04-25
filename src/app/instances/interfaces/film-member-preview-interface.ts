@@ -1,5 +1,5 @@
 export interface IMemberPreview {
-  get primaryKey(): number;
+  getId(): number;
 
-  get nameMember(): string;
+  getName(): string;
 }

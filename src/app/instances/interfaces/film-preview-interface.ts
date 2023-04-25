@@ -1,11 +1,9 @@
 export interface IFilmPreview {
-  get primaryKey(): number;
+  getId(): number;
 
-  get nameFilm(): string;
+  getName(): string;
 
-  get annotation(): string;
+  getDateRelease(): Date;
 
-  get country(): string;
-
-  get poster(): string;
+  getPoster(): string;
 }

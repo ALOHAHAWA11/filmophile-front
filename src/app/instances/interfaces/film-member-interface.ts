@@ -1,15 +1,14 @@
 import {IMemberPreview} from "./film-member-preview-interface";
+import {FilmPreview} from "../film-preview";
 
 export interface IMember extends IMemberPreview {
 
-  get poster(): string;
+  getImage(): string;
 
-  get country(): string;
+  getInformation(): string;
 
-  get information(): string;
+  getBirthdate(): Date;
 
-  get birthday(): string;
-
-  get roles(): string[];
+  getFilms(): FilmPreview;
 
 }

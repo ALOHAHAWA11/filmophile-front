@@ -2,27 +2,23 @@ import {IFilmPreview} from "./interfaces/film-preview-interface";
 
 export class FilmPreview implements IFilmPreview {
 
-  constructor(private _primaryKey?: number, private _nameFilm?: string, private _annotation?: string,
-              private _country?: string, private _poster?: string) {
-  }
-  public get primaryKey() : number {
-    return this._primaryKey!;
+  constructor(private id?: number, private name?: string, private poster?: string, private dateRelease?: Date) {
   }
 
-  public get nameFilm(): string {
-    return this._nameFilm!;
+  public getDateRelease(): Date {
+    return this.dateRelease!;
   }
 
-  public get annotation(): string {
-    return this._annotation!;
+  public getId(): number {
+    return this.id!;
   }
 
-  public get country(): string {
-    return this._country!;
+  public getName(): string {
+    return this.name!;
   }
 
-  public get poster(): string {
-    return this._poster!;
+  public getPoster(): string {
+    return this.poster!;
   }
 
 }

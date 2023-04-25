@@ -2,48 +2,33 @@
   <div class="row">
     <div class="div-img col-sm-12 col-md-6 col-lg-4">
       <div>
-        <img src="{{filmPost.poster}}" class="card-img-top img-article-left card shadow-lg bg-white">
+        <img src="{{filmPost.getPoster()}}" class="card-img-top img-article-left card shadow-lg bg-white">
       </div>
     </div>
     <div class="div-text col-sm-12 col-md-6 col-lg-8">
       <div class="card-body">
-        <div class="div-film-title"><h4 class="card-title"><b>{{filmPost.nameFilm}}</b>
-          ({{filmPost.dateRelease | date:'yyyy'}})
+        <div class="div-film-title"><h4 class="card-title"><b>{{filmPost.getName()}}</b>
+          ({{filmPost.getDateRelease() | date:'yyyy'}})
         </h4>
-          <p class="card-subtitle">{{filmPost.originalName}}</p></div>
+          <p class="card-subtitle">{{filmPost.getOriginalName()}}</p></div>
         <div>
           <p class="card-text">
-            Страна: {{filmPost.country}}
-          </p>
-          <p class="card-text">
-            Дата выхода: {{filmPost.dateRelease | date}}
+            Дата выхода: {{filmPost.getDateRelease() | date}}
           </p>
           <ul class="list-inline">
             Жанр:
-            <li *ngFor="let genre of filmPost.genres" class="list-inline-item">{{genre}} |</li>
+            <li *ngFor="let genre of filmPost.getGenres()" class="list-inline-item">{{genre}} |</li>
           </ul>
-          <p *ngFor="let actor of filmPost.actors" class="card-text">
-            В ролях:<a [routerLink]="['/member', actor?.primaryKey]" class="link-warning"> {{actor.nameMember}}</a>
-          </p>
-          <p *ngFor="let director of filmPost.directors" class="card-text">
-            Режиссер:<a [routerLink]="['/member', director?.primaryKey]" class="link-warning"> {{director.nameMember}}</a>
-          </p>
-          <p *ngFor="let operator of filmPost.operators" class="card-text">
-            Оператор:<a [routerLink]="['/member', operator?.primaryKey]" class="link-warning"> {{operator.nameMember}}</a>
-          </p>
-          <p *ngFor="let producer of filmPost.producers" class="card-text">
-            Продюсер:<a [routerLink]="['/member', producer?.primaryKey]" class="link-warning"> {{producer.nameMember}}</a>
-          </p>
-          <p *ngFor="let writer of filmPost.writers" class="card-text">
-            Сценарист:<a [routerLink]="['/member', writer?.primaryKey]" class="link-warning"> {{writer.nameMember}}</a>
-          </p>
+<!--          <p *ngFor="let writer of filmPost.writers" class="card-text">-->
+<!--            Сценарист:<a [routerLink]="['/member', writer?.primaryKey]" class="link-warning"> {{writer.nameMember}}</a>-->
+<!--          </p>-->
         </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="div-annotation col-12">
-      {{filmPost.annotation}}
+      {{filmPost.getAnnotation()}}
     </div>
   </div>
   <div class="row">
