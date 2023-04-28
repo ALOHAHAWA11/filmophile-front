@@ -37,4 +37,8 @@ export class FilmPostComponent implements OnInit, OnDestroy {
   get filmPost(): FilmPost {
     return this._filmPost;
   }
+
+  public deleteFilm() {
+    this._filmService.deleteFilmPost(this._id)
+  }
 }

@@ -9,8 +9,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {NavigationComponent} from './navigation/navigation.component';
 import {FilmCardComponent} from './film-card/film-card.component';
 import {FilmPostComponent} from './film-post/film-post.component';
-// import {MemberPostComponent} from './member-post/member-post.component';
+import {MemberPostComponent} from './member-post/member-post.component';
 import {FilmService} from "./services/film.service";
+import { FilmCreateComponent } from './film-create/film-create.component';
+import { MemberCreateComponent } from './member-create/member-create.component';
+import { GenreCreateComponent } from './genre-create/genre-create.component';
+import { FilmEditComponent } from './film-edit/film-edit.component';
+import { MemberEditComponent } from './member-edit/member-edit.component';
 
 registerLocaleData(localeRu, 'ru')
 
@@ -20,7 +25,12 @@ registerLocaleData(localeRu, 'ru')
     NavigationComponent,
     FilmCardComponent,
     FilmPostComponent,
-    // MemberPostComponent,
+    MemberPostComponent,
+    FilmCreateComponent,
+    MemberCreateComponent,
+    GenreCreateComponent,
+    FilmEditComponent,
+    MemberEditComponent,
   ],
     imports: [
         BrowserModule,

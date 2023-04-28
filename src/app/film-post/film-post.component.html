@@ -2,7 +2,7 @@
   <div class="row">
     <div class="div-img col-sm-12 col-md-6 col-lg-4">
       <div>
-        <img src="{{filmPost.getPoster()}}" class="card-img-top img-article-left card shadow-lg bg-white">
+        <img src="{{filmPost.getPoster()}}" height="580px" width="210px" class="card-img-top img-article-left card shadow-lg bg-white">
       </div>
     </div>
     <div class="div-text col-sm-12 col-md-6 col-lg-8">
@@ -19,9 +19,10 @@
             Жанр:
             <li *ngFor="let genre of filmPost.getGenres()" class="list-inline-item">{{genre}} |</li>
           </ul>
-<!--          <p *ngFor="let writer of filmPost.writers" class="card-text">-->
-<!--            Сценарист:<a [routerLink]="['/member', writer?.primaryKey]" class="link-warning"> {{writer.nameMember}}</a>-->
-<!--          </p>-->
+          <p  class="card-text">
+            Принимали участие:<a *ngFor="let member of filmPost.getMembers()"
+                                 [routerLink]="['/member', member.id]"  class="link-warning"> {{member.name}}</a>
+          </p>
         </div>
       </div>
     </div>
@@ -32,11 +33,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
-      <div class="div-input">
-        <textarea class="form-control" type="text" rows="10" placeholder="Оставьте свой отзыв!"></textarea>
-        <button class="btn btn-outline-warning" type="submit">Оставить отзыв</button>
-      </div>
+    <div class="div-annotation col-1">
+      <button class="btn btn-danger" (click)="deleteFilm()">Удалить</button>
+    </div>
+    <div class="div-annotation col-1">
+      <a [routerLink]="['/edit_film', filmPost.getId()]" class="btn btn-warning">Редактировать</a>
     </div>
   </div>
 </div>
